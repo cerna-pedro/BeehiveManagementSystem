@@ -8,11 +8,19 @@ namespace BeehiveManagementSystem
 {
     internal class EggCare : Bee
     {
-        public EggCare() : base("Egg Care") { }
+        private Queen queen;
+        private const float CARE_PROGRESS_PER_SHIFT = 0.15f;
+        public EggCare(Queen queen) : base("Egg Care")
+        {
+           this.queen= queen;
+        
+
+        }
         public override float CostPerShift { get { return 1.35f; } }
 
         public override void DoJob()
         {
+            queen.CareForEggs(CARE_PROGRESS_PER_SHIFT);
             
         }
     }

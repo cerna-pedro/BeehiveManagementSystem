@@ -8,7 +8,7 @@ namespace BeehiveManagementSystem
 {
     internal class Bee
     {
-        protected string Job { get;  }
+        public string Job { get;  }
 
         public virtual float CostPerShift { get;  }
         public Bee(string job)
@@ -20,7 +20,7 @@ namespace BeehiveManagementSystem
         {
 
         }
-        protected void WorkTheNextShift()
+        public void WorkTheNextShift()
         {
             if (HoneyVault.ConsumeHoney(CostPerShift))
             {

@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <Button Content="Work The Next Shift"  Margin="20,20,20,20" Grid.Row="2" Click="WorkShift_Click" FontSize="18" />
         <StackPanel Grid.Row="1" Margin="20,20,20,20" VerticalAlignment="Top">
-            <ComboBox x:Name="jobSelector" FontSize="18" SelectedIndex="0" Margin="0,0,0,20">
+            <ComboBox x:Name="jobSelector" FontSize="18" SelectedIndex="0" Margin="0,0,0,20" SelectionChanged="jobSelector_SelectionChanged">
                         <ListBoxItem Content="Nectar Collector"/>
                         <ListBoxItem Content="Honey Manufacturer"/>
                         <ListBoxItem Content="Egg Care"/>

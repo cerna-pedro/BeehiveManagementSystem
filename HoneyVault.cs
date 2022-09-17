@@ -27,7 +27,7 @@ namespace BeehiveManagementSystem
                 {
                     warning += "\nLOW NECTAR - ADD A NECTAR COLLECTOR";
                 }
-                return $"\nHoney: {honey:0.0}\nNectar: {nectar:0.0}" + warning;
+                return $"Honey: {honey:0.0}\nNectar: {nectar:0.0}" + warning;
 
             }
         }
@@ -36,12 +36,13 @@ namespace BeehiveManagementSystem
 
         public static void ConvertNectarToHoney(float amount)
         {
-            if (amount > nectar)
+            float nectarToConvert = amount;
+            if (nectarToConvert > nectar)
             {
-                amount = nectar;
+                nectarToConvert = nectar;
             }
-            nectar -= amount;
-            honey += (amount * NECTAR_CONVERSION_RATIO);
+            nectar -= nectarToConvert;
+            honey += (nectarToConvert * NECTAR_CONVERSION_RATIO);
 
         }
 
