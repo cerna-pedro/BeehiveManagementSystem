@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace BeehiveManagementSystem
 {
@@ -20,12 +21,21 @@ namespace BeehiveManagementSystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DispatcherTimer timer = new DispatcherTimer();
         private Queen queen;
         public MainWindow()
         {
             queen = new Queen();
             InitializeComponent();
+            timer.Tick += Timer_Tick;
+            timer.Interval = TimeSpan.FromSeconds(1.5);
+            timer.Start();
             
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            WorkShift_Click(this, new RoutedEventArgs());
         }
 
         private void WorkShift_Click(object sender, RoutedEventArgs e)
