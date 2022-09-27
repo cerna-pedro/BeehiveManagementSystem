@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BeehiveManagementSystem
 {
-    internal abstract class Bee
+    internal abstract class Bee :IWorker
     {
         public string Job { get;  }
 
